@@ -1,3 +1,48 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --accent: #0a7d6e;
+  --on-accent: #ffffff;
+  --border: #888888;
+}
+
+html:has(#theme-toggle:checked) {
+  --bg: #111111;
+  --text: #f5f5f5;
+  --accent: #4fd1c0;
+  --on-accent: #111111;
+  --border: #aaaaaa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+/* ---------- Header ---------- */
 header {
   display: flex;
   flex-wrap: wrap;
@@ -5,6 +50,7 @@ header {
   justify-content: space-between;
   gap: 0.75rem;
   padding: 1rem;
+  border-bottom: 0.0625rem solid var(--border);
 }
 
 .brand {
@@ -23,7 +69,7 @@ header {
   cursor: pointer;
 }
 
-nav {
+header nav {
   display: none;
   flex-direction: column;
   width: 100%;
@@ -35,7 +81,7 @@ nav {
   display: flex;
 }
 
-nav a {
+header nav a {
   color: var(--text);
   text-decoration: none;
 }
@@ -49,6 +95,7 @@ nav a {
   text-decoration: none;
 }
 
+/* ---------- Hero ---------- */
 .hero {
   min-height: 80vh;
   display: flex;
@@ -71,19 +118,124 @@ nav a {
 
 .cta {
   background: var(--accent);
-  color: #ffffff;
+  color: var(--on-accent);
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
   font-weight: bold;
   text-decoration: none;
 }
 
+/* ---------- Grid sections (services + staff) ---------- */
+.grid-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.grid-section h2 {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.card {
+  border: 0.0625rem solid var(--accent);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.icon {
+  font-size: 2.5rem;
+}
+
+/* ---------- Form ---------- */
+.appointment {
+  padding: 2rem 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 100%;
+}
+
+input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 0.125rem solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+input:valid {
+  border-color: #2e7d32;
+}
+
+input:user-invalid {
+  border-color: #c62828;
+}
+
+button[type="submit"] {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  border-top: 0.0625rem solid var(--border);
+}
+
+footer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+footer h3 {
+  margin-bottom: 0.5rem;
+}
+
+address {
+  font-style: normal;
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.theme-switch input {
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+}
+
+/* ---------- Desktop ---------- */
 @media (min-width: 1024px) {
   .burger {
     display: none;
   }
 
-  nav {
+  header {
+    padding: 1rem 8%;
+  }
+
+  header nav {
     display: flex;
     flex-direction: row;
     width: auto;
@@ -97,5 +249,23 @@ nav a {
 
   .hero h1 {
     font-size: 3.5rem;
+  }
+
+  .grid-section {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem 8%;
+  }
+
+  .appointment {
+    padding: 3rem 8%;
+  }
+
+  form {
+    max-width: 40rem;
+  }
+
+  footer {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 8%;
   }
 }
