@@ -1,0 +1,24 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --accent: #0a7d6e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  /* стили для компьютера */
+}
