@@ -1,24 +1,101 @@
-:root {
-  --bg: #ffffff;
-  --text: #111111;
-  --accent: #0a7d6e;
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
+.brand {
+  font-weight: bold;
+  font-size: 1.25rem;
   color: var(--text);
+  text-decoration: none;
 }
 
-img {
-  max-width: 100%;
+#menu-toggle {
+  display: none;
+}
+
+.burger {
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.75rem;
+  order: 5;
+}
+
+#menu-toggle:checked ~ nav {
+  display: flex;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.call-btn {
+  background: #c62828;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  color: #ffffff;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("hero.jpg") center / cover,
+    #2b3a42;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.cta {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 @media (min-width: 1024px) {
-  /* стили для компьютера */
+  .burger {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    order: 0;
+    gap: 2rem;
+  }
+
+  .hero {
+    padding: 2rem 8%;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
 }
