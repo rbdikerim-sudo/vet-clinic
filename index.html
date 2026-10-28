@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vet Clinic</title>
+  <title>VetCare — Veterinary Clinic</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +14,7 @@
     <nav>
       <a href="#services">Services</a>
       <a href="#staff">Staff</a>
+      <a href="#appointment">Appointment</a>
     </nav>
     <a class="call-btn" href="tel:+77000000000">Call Doctor 24/7</a>
   </header>
@@ -23,8 +24,91 @@
       <h1>Professional Care for Your Pets</h1>
       <a class="cta" href="#appointment">Make an Appointment</a>
     </section>
+
+    <section id="services" class="grid-section">
+      <h2>Our Services</h2>
+      <article class="card">
+        <span class="icon">🩺</span>
+        <h3>Therapy</h3>
+        <p>Diagnostics and treatment of common illnesses.</p>
+      </article>
+      <article class="card">
+        <span class="icon">🏥</span>
+        <h3>Surgery</h3>
+        <p>Safe operations with modern equipment.</p>
+      </article>
+      <article class="card">
+        <span class="icon">💉</span>
+        <h3>Vaccination</h3>
+        <p>Protect your pet with timely vaccines.</p>
+      </article>
+    </section>
+
+    <section id="staff" class="grid-section">
+      <h2>Our Staff</h2>
+      <article class="card">
+        <span class="icon">👩‍⚕️</span>
+        <h3>Dr. Aigerim S.</h3>
+        <p>Therapist, 10 years of experience.</p>
+      </article>
+      <article class="card">
+        <span class="icon">👨‍⚕️</span>
+        <h3>Dr. Nurlan B.</h3>
+        <p>Surgeon, 12 years of experience.</p>
+      </article>
+      <article class="card">
+        <span class="icon">👩‍⚕️</span>
+        <h3>Dr. Dana K.</h3>
+        <p>Vaccination specialist, 7 years of experience.</p>
+      </article>
+    </section>
+
+    <section id="appointment" class="appointment">
+      <h2>Make an Appointment</h2>
+      <form>
+        <label for="pet">Pet's Name</label>
+        <input type="text" id="pet" name="pet" placeholder="Pet's Name" required>
+
+        <label for="species">Pet Species</label>
+        <input type="text" id="species" name="species" placeholder="Pet Species" required>
+
+        <label for="phone">Owner's Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="+7 700 000 0000" required>
+
+        <label for="email">Owner's Email</label>
+        <input type="email" id="email" name="email" placeholder="name@example.com" required>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Make an Appointment</button>
+      </form>
+    </section>
   </main>
 
-  <footer></footer>
+  <footer>
+    <section>
+      <h3>Emergency</h3>
+      <p><a href="tel:+77000000000">+7 700 000 0000</a></p>
+      <address>Almaty, Abay Ave. 1</address>
+    </section>
+
+    <nav>
+      <h3>Links</h3>
+      <a href="#services">Services</a>
+      <a href="#staff">Staff</a>
+      <a href="#appointment">Appointment</a>
+      <a href="https://wa.me/77000000000">WhatsApp</a>
+      <a href="https://t.me/vetcare">Telegram</a>
+    </nav>
+
+    <section>
+      <label class="theme-switch" for="theme-toggle">
+        <input type="checkbox" id="theme-toggle">
+        🌙 Night mode
+      </label>
+      <small>© 2026 VetCare. All rights reserved. Privacy Policy.</small>
+    </section>
+  </footer>
 </body>
 </html>
